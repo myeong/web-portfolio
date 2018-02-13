@@ -1,0 +1,430 @@
+/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+
+#zone-branding{
+	margin-top: 15px;
+}
+
+h1, h2, h3, 
+h2 a:link, h2 a:visited{
+	font-family: 'Roboto Slab', serif;
+	font-weight: 400;
+	color: #555054;
+}
+
+div, div span {
+	font-size: 16px;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+	color: #555054;
+}
+
+a div{
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+	color: indianred;
+}
+
+img {
+	border: 1px solid gray;
+}
+
+a:link, a:visited{
+	color: indianred;
+	text-decoration: none;
+}
+
+h2.node-title a,
+#page-title{
+	pointer-events: none;
+	color: #555054;	
+}
+#page-title,
+h2.node-title,
+h2.block-title{
+	margin-bottom: 2px;
+	font-size: 18px;
+}
+
+h3 div, h3{
+	font-size: 16px;
+	font-weight: 400;
+}
+
+table {
+	border: none;
+}
+
+/* front page blocks */
+
+.block-search {
+	margin-top: 15px;
+}
+
+#region-sidebar-second .views-row{
+	margin-bottom: 10px;	
+}
+
+#region-sidebar-second .views-row span{
+	font-size: 14px;
+}
+
+.block-recent-post-block {
+	margin-top: 10px;
+}
+
+.block-views-news-block-1 .views-field-field-city div{
+	font-weight: 400;
+	font-size: 15px;
+}
+
+
+/* Sidebar */
+
+.block-views-news-block{
+	padding-right: 10px;
+}
+
+.block-views-news-block div.views-row{
+	margin-bottom: 10px;
+}
+.block-views-news-block div.views-field-field-event-date span{
+	font-weight: 400;
+}
+
+.block-views-news-block .more-link a{
+	font-size: 12px;
+}
+
+/* Menu */
+/*div.block-nice-menus{
+	position: absolute;
+	margin: -21px 0 0 0;
+}*/
+#region-menu{
+	margin: 31px 0 0 0;
+}
+
+ul.nice-menu a{
+	color: indianred;	
+	padding: 2px 8px 2px 8px;
+	border: 1px #FFF;
+}
+ul.nice-menu li{
+	border: none;
+	background-color: transparent;
+	float: left;
+	font-size: 15px;
+	height: 1em;
+}
+ul.nice-menu li a:hover{
+	border: 1px solid indianred;
+	border-radius: 2px;
+}
+
+li a.active{
+	font-weight: 400;
+	color: indianred;
+}
+
+#region-sidebar-first .menu {
+	margin-top: 20px
+}
+
+#block-block-2 p,
+#block-views-news-block span {
+	font-size: 14px;
+}
+
+ul li{
+	text-align: right;
+	margin-right: 15px;
+	list-style-type: none;
+	list-style-image: none;
+}
+
+.page-node-11 ul li{
+	text-align: left;
+}
+
+ul.menu li.leaf{
+	text-align: right;
+	margin-right: 35px;
+	list-style-type: none;
+	list-style-image: none;
+}
+
+/* Grid pages */
+.views-view-grid tr{
+	padding: 5px 0 10px 0;
+	height: 148px;
+}
+.page-publications .views-view-grid tr{
+	height: 143px;
+}
+
+.page-publications div{
+	font-size: 15px;
+}
+
+.page-publications .views-field-field-venue div,
+.page-publications .views-field-field-authors div,
+.page-publications .views-field-field-authors span{
+	font-size: 14px;
+}
+
+.page-firstyear #region-content {
+	width: 850px;
+}
+
+
+.page-projects #region-content,
+.page-publications #region-content,
+.node-type-publication #region-content,
+.node-type-project #region-content{
+	width: 800px;
+}
+
+.front #region-content{
+	max-width: 710px;
+	padding-right: 18px;
+}
+
+.page-firstyear tr:hover td,
+.page-projects tr:hover td{
+	background: transparent;
+}
+.page-firstyear tr td,
+.page-projects tr td{
+	padding-left: 0;
+	width: 270px;
+	height: 380px;
+	vertical-align: top;
+}
+
+.page-firstyear tr td div,
+.page-projects tr td div  {
+	max-width: 237px;
+}
+
+.views-view-grid p{
+	margin-bottom: 0;
+}
+
+.view-publications h3 {
+	margin: 10px 0 6px 0;
+}
+
+.view-publications td, th {
+	vertical-align: inherit;
+}
+
+.view-publications span.myeong{
+	text-decoration: underline;
+}
+
+.view-projects .view-header{
+	margin-bottom: 12px;
+}
+
+.page-publications .views-field-field-image,
+.page-publications .views-field-field-video{
+	float: left;
+	margin-right: 15px;
+}
+
+.page-publications table {
+	margin-bottom: 10px;
+}
+
+.page-publications .views-field-field-note .field-content span {
+	font-size: 10px;
+	border-radius: 4px;
+	color: white;
+	padding: 2px 3px 2px 3px;
+	background-color: #AD4E00;
+}
+
+.page-publication div.views-field-field-note,
+.page-publication div.views-field-field-note div {
+	font-size: 13px;
+}
+
+.page-publications .views-field-field-project-type .field-content div,
+.page-publications .views-field-field-publication-type .field-content div,
+.page-publications .views-field-field-tags .field-content div,
+.page-projects .views-field-field-project-type div,
+.page-firstyear .views-field-field-publication-type div,
+.page-firstyear .views-field-field-tags div{
+	float:left;
+	margin: 0 8px 0 0;	
+	font-size: 12px;
+	font-weight: 400;
+}
+.page-projects .views-field-field-tags div {
+	margin: 0 8px 0 0;	
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.page-projects .views-field-field-on-going div {
+	border: 0;
+	border-radius: 4px;
+	margin: 3px 0 0 0;	
+	color: white;
+	background: #99CCFF;
+	font-size: 12px;
+	font-weight: 400;
+	width: 61px;
+	text-align: center;
+}
+
+.page-publications .views-field-field-authors{
+	margin-bottom: 4px;
+}
+
+/* Node */
+.page-node .field-type-image img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.node-type-publication .field-name-field-authors div.field-item{
+	padding: 5px 8px 0 0;	
+}
+
+.node-type-publication .field-name-field-authors,
+.node-type-publication .field-type-taxonomy-term-reference,
+.node-type-project .field-type-taxonomy-term-reference {
+	margin-top: 15px;
+}
+
+.node-type-publication .field-name-body,
+.node-type-publication .field-type-image,
+.node-type-project .field-name-field-image,
+.node-type-project .field-name-body
+{
+	margin-bottom: 15px;
+}
+
+.node-type-publication .field-type-video video,
+.node-type-project .field-type-video video{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-bottom: 15px
+}
+
+.node-type-publication .field-type-taxonomy-term-reference .field-item,
+.node-type-project .field-type-taxonomy-term-reference .field-item{
+	float: left;
+	padding: 0 8px 0 0;
+}
+
+/* First Year Page*/
+
+.page-node.context-firstyear .field-name-body ul ul{
+	margin-bottom: 0;
+	padding-top: 0;
+}
+.page-node.context-firstyear .field-name-body span.title{
+	font-weight: 400;
+	font-size: 16px;
+	font-style: italic;	
+}
+
+.page-node.context-firstyear .field-name-body span.course-title{
+	font-weight: 400;
+}
+
+/* Taxonomy Page */
+.page-taxonomy article{
+	margin-bottom: 15px;
+}
+
+
+/* foot note*/
+#region-footer-first hr{
+	margin-bottom: 5px; 
+	margin-top: 40px;
+	background: #7C7D81;	
+}
+
+#region-footer-first .block{	
+	display:block;
+	margin-right: auto;
+	margin-left: auto;	
+	text-align: center;
+}
+
+#region-footer-first p{
+	font-size: 10px;
+	height: 10px;
+	margin-top: 5px;
+}
+
+span.copy-left {
+	font-size: 11px;
+    display: inline-block;
+    text-align: right;
+    margin: 0 2px 0 0;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+/* CV page */
+.context-cv p{	
+	margin-bottom: 15px;
+	font-size: 14px;
+}
+
+.context-cv #region-sidebar-first a.active{
+	font-weight: 300;
+}
+
+.context-cv strong{
+	font-weight: 400;
+}
+
+p.cv-title {
+	padding-top: 20px;
+	margin-bottom: 10px;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.context-cv #region-content{
+	width: 750px;
+}
+
+.context-cv p.cv-item{
+	margin: 0;
+	padding-left: 10px;
+	text-indent: -10px;
+}
+
+
+.page-news .views-row{
+	margin-top: 10px;
+}
+
+.page-news .views-field-field-event-date span{
+	font-weight: 400;
+
+}
+
+.page-news .views-field-field-event-date {
+	float: left;
+}
+
+.page-news .views-field-field-event-details,
+.page-news .views-field-title{
+	margin-left: 90px;
+}
+.page-news .views-field-field-event-details div{
+	font-size: 13px;
+}

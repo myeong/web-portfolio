@@ -1,0 +1,98 @@
+---
+ - hosts: all
+   become: true
+   gather_facts: false
+   pre_tasks:
+     - raw: sudo apt-get -y install python-simplejson
+
+   vars:
+     useComposer: true
+
+   handlers:
+
+   - name: restart iptables
+     service: name=iptables state=restarted
+
+   - name: restart apache
+     service: name=apache2 state=restarted
+
+   tasks: 
+
+   - debug: msg="start"
+
+   - name: updating apt-get packages
+     apt: 
+      update_cache: yes
+
+   - name: be sure libselinux-python and selinux policy utils are installed
+     apt: pkg={{ item }} state=installed
+     with_items:
+        - libselinux1
+        - policykit-1
+        - policycoreutils
+        - iptables
+        # - libselinux-python
+        # - policycoreutils-python
+
+   - name: copy custom selinux policy httpvboxpolicy to allow apache to access synched virtualbox/vagrant folder
+     copy: src=templates/selinux/httpvboxpolicy.pp dest=/tmp/httpvboxpolicy.pp 
+
+   - name: install custom selinux policy httpvboxpolicy to allow apache to access synched virtualbox/vagrant folder
+     become: true
+     command: /usr/sbin/semodule -i /tmp/httpvboxpolicy.pp
+
+   # - name: copy firewall template
+   #   copy: src=templates/etc/sysconfig/iptables dest=/sbin/iptables owner=root group=root mode=0600
+   #   notify: restart iptables
+
+   - name: gettext
+     apt: pkg={{ item }} state=installed
+     with_items:
+        - gettext
+
+   - name: Updating PHP5 repository
+     become: true
+     command: apt-add-repository -y ppa:ondrej/php
+
+   - name: updating apt-get 
+     become: true
+     apt:
+       upgrade: yes
+       update_cache: yes
+
+   - name: Install http and php etc
+     apt: pkg={{ item }} state=installed
+     with_items:
+        - apache2
+        - php5.6
+        - php5.6-mcrypt
+        - php5.6-mysql
+        - php5.6-gd
+        - php5.6-tidy
+        - php-pear
+        - mysql-server
+        - mysql-server-5.7
+
+   # httpd.conf update necessary to address vagrant/virtualbox issue so changes to synched folder static html files work 
+   # - name: Set 'EnableSendfile off' in Apache2 httpd.conf 
+   #   lineinfile: dest=/etc/httpd/conf/httpd.conf regexp="^EnableSendfile off" insertafter="^#EnableSendfile " line="EnableSendfile off"
+
+   - name: Ensure Apache running
+     service: name=apache2 state=started enabled=yes
+
+   - name: Copy Apache vhost config file for default web pages 
+     copy: src=templates/etc/httpd/conf.d/15-default.conf dest=/etc/apache2/conf-available/15-default.conf
+     notify: restart apache
+
+   - name: Copy gettext.ini file 
+     copy: src=templates/etc/php.d/gettext.ini dest=/etc/php/5.6/apache2/conf.d/gettext.ini
+     notify: restart apache
+
+   - name: Create application log directory
+     file: path=/var/log/portfolio state=directory owner=www-data group=www-data
+
+   - name: Set application log file permissions
+     file: path=/var/log/portfolio/portfolio.log state=touch owner=www-data group=www-data
+
+   - name: Install git
+     apt: pkg=git state=installed
