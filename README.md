@@ -12,7 +12,7 @@ You need to have the following software installed on your PC:
 - Ansible 2.1.0 
 - Python 2.x
 
-If you're using a Windows machine, Ansible is not available -- you need to install required packages inside your Vagrant machine (once it's up). For the software packages required, see `vm/basic/playbook.yml'. 
+If you're using a Windows machine, Ansible is not available -- you need to install required packages inside your Vagrant machine (once it's up). For the software packages required, see `vm/basic/playbook.yml`. 
 
 ## Local Environment Set-up
 
@@ -32,7 +32,7 @@ vagrant ssh
 When you're done using the machine, type `vagrant halt` to turn the machine off. The Ubuntu image is saved, but it's removed from your memory space. 
 You can start developing the portfolio in `html`, and it will automatically applied to the Ubuntu machine. 
 
-4. Migrate `DB/myeong_portfolio.sql` to the MySQL DB running on the Vagrant machine. The default ID/Password is `root` and `root`. You can change it once you SSH into the machine. 
+4. Migrate `DB/myeong_portfolio.sql` to the MySQL DB running on the Vagrant machine. The default ID/Password is `root` and `root`. You can change it once you SSH into the machine (chaging credential is recommended for the security purpose). 
 
 5. Copy `html/sites/default/themes/default.settings.php` to `html/sites/default/themes/settings.php`. Inside this file, modify the DB information (if applicable).
 
