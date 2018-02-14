@@ -8,7 +8,7 @@ Date: February 2018
 # Portfolio Website Drupal Template 
 
 This is an empty template for anybody who is interested in setting up a Drupal-based portpolio website. This template is desigend and developed by Myeong Lee, and feel free to modify it when you use it. This repository is under the GNU GPL license. 
-To see how this template look, check out [Myeong's website](http://myeonglee.com).
+To see how this template looks, check out [Myeong's website](http://myeonglee.com).
 
 ## Pre-requisites
 You need to have the following software installed on your PC:
