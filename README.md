@@ -7,7 +7,8 @@ Date: February 2018
 
 # Portfolio Website Drupal Template 
 
-This is an empty template for anybody who is interested in setting up a Drupal-based portpolio website. This template is desigend and developed by Myeong Lee, and feel free to modify it when you use it. This repository is under GNU license. 
+This is an empty template for anybody who is interested in setting up a Drupal-based portpolio website. This template is desigend and developed by Myeong Lee, and feel free to modify it when you use it. This repository is under the GNU GPL license. 
+To see how this template look, check out [Myeong's website](http://myeonglee.com).
 
 ## Pre-requisites
 You need to have the following software installed on your PC:
@@ -38,7 +39,7 @@ vagrant ssh
 When you're done using the machine, type `vagrant halt` to turn the machine off. The Ubuntu image is saved, but it's removed from your memory space. 
 You can start developing the portfolio in `html`, and it will automatically applied to the Ubuntu machine. 
 
-4. Migrate `DB/myeong_portfolio.sql` to the MySQL DB running on the Vagrant machine. The default ID/Password is `root` and `root`. You can change it once you SSH into the machine (chaging credential is recommended for the security purpose). 
+4. Migrate `DB/portfolio.sql` to the MySQL DB running on the Vagrant machine. The default ID/Password is `root` and `root`. You can change it once you SSH into the machine (chaging credential is recommended for the security purpose). 
 
 5. Copy `html/sites/default/themes/default.settings.php` to `html/sites/default/themes/settings.php`. Inside this file, modify the DB information (if applicable).
 
