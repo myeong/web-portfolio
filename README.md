@@ -1,6 +1,7 @@
 ---
 Title: Portfolio Website Drupal Template 
-Author: Myeong Lee (iSchool, Maryland)
+Author: Myeong Lee 
+Email: deeper.myeong.lee@gmail.com
 Date: February 2018
 ---
 
