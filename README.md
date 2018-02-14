@@ -14,6 +14,8 @@ You need to have the following software installed on your PC:
 
 If you're using a Windows machine, Ansible is not available -- you need to install required packages inside your Vagrant machine (once it's up). For the software packages required, see `vm/basic/playbook.yml`. 
 
+Also, after you install everything, you need to know how to use Drupal to configure the website properly. 
+
 ## Local Environment Set-up
 
 1. Clone this repo to your computer.
