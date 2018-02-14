@@ -1,4 +1,10 @@
 
 html/sites/default/settings.php
+html/sites/default/files
 .DS_Store
-.htaccess
+
+vm/basic/playbook.retry
+vm/basic/*.log
+vm/basic/.vagrant
+
+html/error_log

@@ -8,10 +8,12 @@ sudo service mysql start > /dev/null 2>&1
 
 # echo "- Installing PHPMYADMIN"
 # sudo apt-get install -y phpmyadmin php-mbstring php-gettext > /dev/null 2>&1
-# sudo phpenmod mcrypt
-# sudo phpenmod mbstring
-# sudo systemctl restart apache2
-# sudo cp /vagrant/my.cnf /etc/mysql/my.cnf
+sudo phpenmod mcrypt
+sudo phpenmod mbstring
+sudo a2enmod rewrite 
+
+sudo cp /vagrant/my.cnf /etc/mysql/my.cnf
+sudo systemctl restart apache2
 
 #sudo /usr/sbin/mysqld --skip-grant-tables --skip-networking &
 

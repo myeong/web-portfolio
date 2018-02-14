@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 
     lee_portfolio.vm.boot_timeout = 600
 
-    lee_portfolio.vm.box = "box-cutter/ubuntu1404"
+    lee_portfolio.vm.box = "ubuntu/trusty64"
     
     #lee_portfolio.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
     config.vm.hostname = "portfolio"

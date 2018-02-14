@@ -23,7 +23,7 @@
  */
 ?>
 <?php 
-$output = str_replace ("Myeong Lee", "<span class='myeong'>Myeong Lee</span>", $output);
-print_r($output); 
+// $output = str_replace ("Myeong Lee", "<span class='myeong'>Myeong Lee</span>", $output);
+// print_r($output); 
 
 ?>

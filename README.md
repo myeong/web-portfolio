@@ -38,5 +38,9 @@ You can start developing the portfolio in `html`, and it will automatically appl
 
 6. You can access your development website by going to `192.168.33.13` on your browser.
 
-7. Once development is done, you can deploy `html` folder to your own server (you can make use of the Ansible scripts to configure your server automatically).
+7. Enabling Clean URLs
+	- Open `/etc/apache2/apache2.conf`, go to the line where `<Directory "/var/www/">` is at, and modify the line `AllowOverride None` to `AllowOverride All`. 	
+	- Then clean URL works for Drupal sites. 
+
+8. Once development is done, you can deploy `html` folder to your own server (you can make use of the Ansible scripts to configure your server automatically).
 

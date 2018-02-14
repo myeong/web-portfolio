@@ -1,9 +1,8 @@
 ---
  - hosts: all
-   become: true
-   gather_facts: false
-   pre_tasks:
-     - raw: sudo apt-get -y install python-simplejson
+
+   #become_user: vagrant
+   #become: yes
 
    vars:
      useComposer: true
@@ -30,7 +29,6 @@
         - libselinux1
         - policykit-1
         - policycoreutils
-        - iptables
         # - libselinux-python
         # - policycoreutils-python
 
@@ -38,40 +36,28 @@
      copy: src=templates/selinux/httpvboxpolicy.pp dest=/tmp/httpvboxpolicy.pp 
 
    - name: install custom selinux policy httpvboxpolicy to allow apache to access synched virtualbox/vagrant folder
-     become: true
-     command: /usr/sbin/semodule -i /tmp/httpvboxpolicy.pp
+     command: sudo /usr/sbin/semodule -i /tmp/httpvboxpolicy.pp
+     become: yes
+     become_user: vagrant
 
-   # - name: copy firewall template
-   #   copy: src=templates/etc/sysconfig/iptables dest=/sbin/iptables owner=root group=root mode=0600
-   #   notify: restart iptables
+   - name: copy firewall template
+     copy: src=templates/etc/sysconfig/iptables dest=/sbin/iptables owner=root group=root mode=0600
 
    - name: gettext
      apt: pkg={{ item }} state=installed
      with_items:
         - gettext
 
-   - name: Updating PHP5 repository
-     become: true
-     command: apt-add-repository -y ppa:ondrej/php
-
-   - name: updating apt-get 
-     become: true
-     apt:
-       upgrade: yes
-       update_cache: yes
-
    - name: Install http and php etc
      apt: pkg={{ item }} state=installed
      with_items:
         - apache2
-        - php5.6
-        - php5.6-mcrypt
-        - php5.6-mysql
-        - php5.6-gd
-        - php5.6-tidy
+        - php5
+        - php5-mcrypt
+        - php5-pgsql
+        - php5-gd
+        - php5-tidy
         - php-pear
-        - mysql-server
-        - mysql-server-5.7
 
    # httpd.conf update necessary to address vagrant/virtualbox issue so changes to synched folder static html files work 
    # - name: Set 'EnableSendfile off' in Apache2 httpd.conf 
@@ -85,14 +71,14 @@
      notify: restart apache
 
    - name: Copy gettext.ini file 
-     copy: src=templates/etc/php.d/gettext.ini dest=/etc/php/5.6/apache2/conf.d/gettext.ini
+     copy: src=templates/etc/php.d/gettext.ini dest=/etc/php5/apache2/conf.d/gettext.ini
      notify: restart apache
 
    - name: Create application log directory
-     file: path=/var/log/portfolio state=directory owner=www-data group=www-data
+     file: path=/var/log/humanface state=directory owner=www-data group=www-data
 
    - name: Set application log file permissions
-     file: path=/var/log/portfolio/portfolio.log state=touch owner=www-data group=www-data
+     file: path=/var/log/humanface/humanface.log state=touch owner=www-data group=www-data
 
    - name: Install git
      apt: pkg=git state=installed
