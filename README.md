@@ -1,7 +1,8 @@
 Portfolio Website Drupal Template 
 ==========
-Myeong Lee (iSchool, University of Maryland)
---------
+---
+author: "Myeong Lee (iSchool, Maryland)"
+---
 
 This is an empty template for anybody who is interested in setting up a Drupal-based portpolio website. This template is desigend and developed by Myeong Lee, and feel free to modify it when you use it. This repository is under GNU license. 
 
@@ -46,3 +47,5 @@ You can start developing the portfolio in `html`, and it will automatically appl
 
 8. Once development is done, you can deploy `html` folder to your own server (you can make use of the Ansible scripts to configure your server automatically).
 
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
