@@ -1,1 +1,0 @@
-{"virtualbox":{"/var/www/html":{"group":"www-data","owner":"www-data","create":true,"guestpath":"/var/www/html","hostpath":"/Users/myeong/git/myeonglee.com/html","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/myeong/git/myeonglee.com/vm/basic","disabled":false,"__vagrantfile":true}}}
