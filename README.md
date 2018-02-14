@@ -1,8 +1,10 @@
-Portfolio Website Drupal Template 
-==========
 ---
-author: "Myeong Lee (iSchool, Maryland)"
+Title: Portfolio Website Drupal Template 
+Author: Myeong Lee (iSchool, Maryland)
+Date: February 2018
 ---
+
+# Portfolio Website Drupal Template 
 
 This is an empty template for anybody who is interested in setting up a Drupal-based portpolio website. This template is desigend and developed by Myeong Lee, and feel free to modify it when you use it. This repository is under GNU license. 
 
